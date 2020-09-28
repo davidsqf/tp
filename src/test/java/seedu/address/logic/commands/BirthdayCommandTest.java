@@ -63,10 +63,10 @@ class BirthdayCommandTest {
         showPersonAtIndex(model, INDEX_FIRST_PERSON);
 
         Person firstPerson = model.getFilteredPersonList().get(INDEX_FIRST_PERSON.getZeroBased());
-        Person editedPerson = new PersonBuilder(model.getFilteredPersonList().get(INDEX_FIRST_PERSON.getZeroBased()))
-            .withBirthday(BIRTHDAY_STUB).build();
-
-        BirthdayCommand birthdayCommand = new BirthdayCommand(INDEX_FIRST_PERSON, new Birthday(editedPerson.getBirthday().value));
+        PersonBuilder temp = new PersonBuilder(model.getFilteredPersonList().get(INDEX_FIRST_PERSON.getZeroBased()));
+        Person editedPerson = temp.withBirthday(BIRTHDAY_STUB).build();
+        Birthday tempBirthday = new Birthday(editedPerson.getBirthday().value);
+        BirthdayCommand birthdayCommand = new BirthdayCommand(INDEX_FIRST_PERSON, tempBirthday);
 
         String expectedMessage = String.format(BirthdayCommand.MESSAGE_ADD_BIRTHDAY_SUCCESS, editedPerson);
 
