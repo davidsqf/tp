@@ -23,14 +23,14 @@ import seedu.address.testutil.TypicalPersons;
 
 
 class BirthdayCommandTest {
-    private static final String Birthday_STUB = "some birthday";
+    private static final String BIRTHDAY_STUB = "some birthday";
 
     private Model model = new ModelManager(TypicalPersons.getTypicalAddressBook(), new UserPrefs());
 
     @Test
     void execute_addBirthdayUnfilteredList_success() {
         Person firstPerson = model.getFilteredPersonList().get(INDEX_FIRST_PERSON.getZeroBased());
-        Person editedPerson = new PersonBuilder(firstPerson).withBirthday(Birthday_STUB).build();
+        Person editedPerson = new PersonBuilder(firstPerson).withBirthday(BIRTHDAY_STUB).build();
 
         BirthdayCommand birthdayCommand = new BirthdayCommand(INDEX_FIRST_PERSON, new Birthday(editedPerson.getBirthday().value));
 
