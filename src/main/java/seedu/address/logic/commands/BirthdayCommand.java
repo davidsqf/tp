@@ -28,8 +28,8 @@ public class BirthdayCommand extends Command {
             + "Example: " + COMMAND_WORD + " 1 "
             + "r/ Likes to swim.";
     public static final String MESSAGE_NOT_IMPLEMENTED_YET = "Birthday command not implemented yet";
-    public static final String MESSAGE_ADD_Birthday_SUCCESS = "Added birthday to Person: %1$s";
-    public static final String MESSAGE_DELETE_Birthday_SUCCESS = "Removed birthday from Person: %1$s";
+    public static final String MESSAGE_ADD_BIRTHDAY_SUCCESS = "Added birthday to Person: %1$s";
+    public static final String MESSAGE_DELETE_BIRTHDAY_SUCCESS = "Removed birthday from Person: %1$s";
 
     private final Index index;
     private final Birthday birthday;
