@@ -31,9 +31,8 @@ class BirthdayCommandTest {
     void execute_addBirthdayUnfilteredList_success() {
         Person firstPerson = model.getFilteredPersonList().get(INDEX_FIRST_PERSON.getZeroBased());
         Person editedPerson = new PersonBuilder(firstPerson).withBirthday(BIRTHDAY_STUB).build();
-
-        BirthdayCommand birthdayCommand = new BirthdayCommand(INDEX_FIRST_PERSON, 
-            new Birthday(editedPerson.getBirthday().value));
+        Birthday tempBirthday = new Birthday(editedPerson.getBirthday().value);
+        BirthdayCommand birthdayCommand = new BirthdayCommand(INDEX_FIRST_PERSON, tempBirthday);
 
         String expectedMessage = String.format(BirthdayCommand.MESSAGE_ADD_BIRTHDAY_SUCCESS, editedPerson);
 
