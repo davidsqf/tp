@@ -16,8 +16,8 @@ import seedu.address.model.AddressBook;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
-import seedu.address.model.person.Person;
 import seedu.address.model.person.Birthday;
+import seedu.address.model.person.Person;
 import seedu.address.testutil.PersonBuilder;
 import seedu.address.testutil.TypicalPersons;
 
@@ -32,7 +32,8 @@ class BirthdayCommandTest {
         Person firstPerson = model.getFilteredPersonList().get(INDEX_FIRST_PERSON.getZeroBased());
         Person editedPerson = new PersonBuilder(firstPerson).withBirthday(BIRTHDAY_STUB).build();
 
-        BirthdayCommand birthdayCommand = new BirthdayCommand(INDEX_FIRST_PERSON, new Birthday(editedPerson.getBirthday().value));
+        BirthdayCommand birthdayCommand = new BirthdayCommand(INDEX_FIRST_PERSON, 
+            new Birthday(editedPerson.getBirthday().value));
 
         String expectedMessage = String.format(BirthdayCommand.MESSAGE_ADD_BIRTHDAY_SUCCESS, editedPerson);
 
@@ -64,7 +65,7 @@ class BirthdayCommandTest {
 
         Person firstPerson = model.getFilteredPersonList().get(INDEX_FIRST_PERSON.getZeroBased());
         Person editedPerson = new PersonBuilder(model.getFilteredPersonList().get(INDEX_FIRST_PERSON.getZeroBased()))
-                .withBirthday(BIRTHDAY_STUB).build();
+            .withBirthday(BIRTHDAY_STUB).build();
 
         BirthdayCommand birthdayCommand = new BirthdayCommand(INDEX_FIRST_PERSON, new Birthday(editedPerson.getBirthday().value));
 
