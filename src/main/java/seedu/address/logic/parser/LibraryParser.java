@@ -78,6 +78,9 @@ public class LibraryParser {
         case UsageByCommand.COMMAND_WORD:
             return new UsageByCommandParser().parse(arguments);
 
+        case ClearDataCommand.COMMAND_WORD:
+            return new ClearDataCommand();
+
 
         default:
             throw new ParseException(MESSAGE_UNKNOWN_COMMAND);
